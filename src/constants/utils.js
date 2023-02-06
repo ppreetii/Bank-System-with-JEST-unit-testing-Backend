@@ -1,0 +1,14 @@
+module.exports = {
+    HASH_SALT_VALUE : 12,
+    DEFAULT_BALANCE : "0.00",
+    DEPOSIT_TYPE: "deposit",
+    WITHDRAW_TYPE: "withdraw",
+    HTTP_STATUS : {
+        OK : 200,
+        BAD_REQUEST : 400,
+        INTERNAL_SERVER_ERROR : 500,
+        CREATED: 201,
+        NOT_FOUND: 404
+    },
+    PRECISION: 2
+}
