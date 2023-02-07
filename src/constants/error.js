@@ -31,7 +31,7 @@ module.exports = {
     },
     USER_NOT_FOUND_ERROR :{
         errorCode: 1006,
-        statusCode: 400, 
+        statusCode: 404, 
         message: 'User Not Found'
     },
     ACCOUNT_DETAILS_FIND_ERROR :{

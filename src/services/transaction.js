@@ -9,7 +9,10 @@ const Account = require("../database/models/account");
 exports.createTransaction = async (data = {}) => {
   try {
     const { type, userId, amount } = data;
-    await User.findUser(null, userId);
+    const isExist = await User.findUser(null, userId);
+  
+    if(!isExist)
+    throw new AppError(ERRORS.USER_NOT_FOUND_ERROR)
 
     let { balance } = await Account.findAccountOfUser(userId);
 

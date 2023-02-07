@@ -10,7 +10,9 @@ const CONSTANTS = require("../constants/utils");
 
 exports.createUser = async (data = {}) => {
   try {
-    await User.findUser(data?.email, null);
+    let isExist = await User.findUser(data?.email, null);
+    if(isExist)
+    throw new AppError(ERRORS.USER_EXIST_ERROR)
 
     data.password = await bcrypt.hash(data.password, CONSTANTS.HASH_SALT_VALUE);
 

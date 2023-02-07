@@ -57,9 +57,6 @@ let findUser = async (email,id) => {
       where: { ...userObj }
     });
     
-    if(!user)
-    throw new AppError(ERRORS.USER_NOT_FOUND_ERROR)
-
     return user;
   } catch (error) {
     throw error;

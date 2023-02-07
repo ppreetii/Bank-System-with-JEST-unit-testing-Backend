@@ -14,7 +14,7 @@ exports.createUser = async (req, res) => {
       id, balance
     });
   } catch (err) {
-    let status = err.error?.status ?? ERRORS.INTERNAL_SERVER_STATUS
+    let status = err.error?.status ?? CONSTANTS.HTTP_STATUS.INTERNAL_SERVER_ERROR
     res.status(status).send(err);
   }
 };
